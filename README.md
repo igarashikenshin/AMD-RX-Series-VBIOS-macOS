@@ -4,6 +4,7 @@ RX580在macOS下, 适用的VBIOS Serial：
 			113-4E353BU-O50 (Micron)
 其他RX显卡可爬贴查询自己型号显卡在macOS对应的VBIOS Serial。
 
+
 引言
 起因：
 从macOS 10.13起，当时我还在用1066，用webdriver的时候，一直感觉mac玩游戏虽然帧数很高，但就是有种顿卡的感觉（时钟型卡顿：每隔3s或每隔5s卡顿一下），起初以为是webdriver性能不好，后面更换rx580后，依然有这种顿卡的感觉，因为也没接触过白的imac，所以认为这就是macOS的通病。
