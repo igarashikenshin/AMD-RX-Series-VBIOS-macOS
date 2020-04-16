@@ -33,7 +33,8 @@ RX580在macOS下, 适用的VBIOS Serial：
 （下载地址https://github.com/bugprogrammer/WhateverGreen）
 
 操作步骤
-1、找到显卡对应的vbios rom文件，这里以我的镁光显存rx580为例（rx580 rom链接https://github.com/igarashikenshin/AMD-RX-Series-VBIOS-macOS/tree/master/RX580/AppleDefaultROM），打开链接找到对应镁光显存的113-4E353BU-O50 (Micron)，将rom下载到atiflash文件夹。
+1、找到显卡对应的vbios rom文件，这里以我的镁光显存rx580为例（rx580 rom链接https://github.com/igarashikenshin/AMD-RX-Series-VBIOS-macOS/tree/master/RX580/AppleDefaultROM），
+打开链接找到对应镁光显存的113-4E353BU-O50 (Micron)，将rom下载到atiflash文件夹。
 2、打开atiflash文件夹，在路径栏输入cmd，进入command line模式。
 3、输入amdvbflash -i ，查询显卡对应slot编号，如为0，则用amdvbflash -f -p 0 xxx.rom（xxx.rom为你的rom名称）刷入vbios rom。（注意：rom名称不可命名过长，会产生未知错误。）
 4、成功刷入rom后，重启至macOS下，挂载efi，将bugprogrammer大佬魔改的weg替换进去。
