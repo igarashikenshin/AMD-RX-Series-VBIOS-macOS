@@ -20,7 +20,7 @@ RX580在macOS下, 适用的VBIOS Serial：
 再后续：
 在爬tonymacx86时发现rx580在白果下对应的有3个vbios serial，分别是113-4E353BU-O4E (Samsung) ；113-4E3531U-O4V (Hynix)；113-4E353BU-O50 (Micron)。
 同时我在github上面发现了428Yotsuba大佬整理的rx400-500系列显卡rom的仓库，我自己也fork整合了一份，下面教程会放上仓库地址。
-然后开始了我的尝试，我是rx580 8G 2304sp镁光显存版，找到对应的113-4E353BU-O50 (Micron)，用amdvbflash刷入rom，重启进入macOS，将kext下的weg替换为bugprogrammer大佬魔改的weg 1.3.7，清除缓存，再次重启，打开游戏，丝般顺滑，之前的顿卡都消失了。
+然后开始了我的尝试，我是rx580 8G 2304sp镁光显存版，找到对应的113-4E353BU-O50 (Micron)，用amdvbflash刷入rom，重启进入macOS，清除缓存，再次重启，打开游戏，丝般顺滑，之前的顿卡都消失了。
 
 特将此经验写成教程分享给各景友，希望能帮助到之前被黑果下游戏卡顿困扰的朋友@a6360280 @chengsitom
 
@@ -29,14 +29,11 @@ RX580在macOS下, 适用的VBIOS Serial：
 1、atiflash_293(windows环境下操作）
 2、对应型号的vbios rom文件（windows环境下刷入）
 （仓库地址https://github.com/igarashikenshin/AMD-RX-Series-VBIOS-macOS）
-3、bugprogrammer大佬魔改的weg
-（下载地址https://github.com/bugprogrammer/WhateverGreen）
 
 操作步骤
 1、找到显卡对应的vbios rom文件，这里以我的镁光显存rx580为例（rx580 rom链接https://github.com/igarashikenshin/AMD-RX-Series-VBIOS-macOS/tree/master/RX580/AppleDefaultROM），
 打开链接找到对应镁光显存的113-4E353BU-O50 (Micron)，将rom下载到atiflash文件夹。
 2、打开atiflash文件夹，在路径栏输入cmd，进入command line模式。
-3、输入amdvbflash -i ，查询显卡对应slot编号，如为0，则用amdvbflash -f -p 0 xxx.rom（xxx.rom为你的rom名称）刷入vbios rom。（注意：rom名称不可命名过长，会产生未知错误。）
-4、成功刷入rom后，重启至macOS下，挂载efi，将bugprogrammer大佬魔改的weg替换进去。
-5、修复权限 sudo mount -uw / && killall Finder  重建缓存sudo kextcache -i /
-6、重启你的macOS，打开游戏，体验顺滑。
+3、输入amdvbflash -i ，查询显卡对应slot编号，如为0，则用amdvbflash -f -p 0 xxx.rom（xxx.rom为你的rom名称）刷入vbios rom。（注意：rom名称不可命名过长，会产生未知错误。
+4、修复权限 sudo mount -uw / && killall Finder  重建缓存sudo kextcache -i 
+5、重启你的macOS，打开游戏，体验顺滑。
